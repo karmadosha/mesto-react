@@ -133,14 +133,7 @@ function App() {
             <span className="form__error form__error_field_avatar" id="avatar-error"></span>
           </>
         }      
-      />
-      <PopupWithForm
-        name='card-delete'
-        title='Вы уверены?'
-        isOpen={false}
-        onClose={closeAllPopups}
-        submitText='Да'   
-      />
+      />      
 
       <PopupWithImage
         card={selectedCard}
