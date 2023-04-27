@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import PopupWithImage from './PopupWithImage';
+import ImagePopup from './ImagePopup';
 import PopupWithForm from './PopupWithForm';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   const[isAddNewcardPopupOpen, setNewcardPopupOpen] = React.useState(false);
   const[isAvatarEditPopupOPen, setAvatarEditPopupOpen] = React.useState(false);
   const[selectedCard, setSelectedCard] = React.useState(null);
-  const[isPopupWithImageOpen, setPopupWithImageOpen] = React.useState(false);
+  const[isImagePopupOpen, setImagePopupOpen] = React.useState(false);
 
   function handleEditAvatarClick() {
     setAvatarEditPopupOpen(true);
@@ -26,14 +26,14 @@ function App() {
 
   function handleCardClick(card) {
     setSelectedCard(card);
-    setPopupWithImageOpen(true);
+    setImagePopupOpen(true);
   }
 
   function closeAllPopups() {
     setProfileEditPopupOpen(false);
     setNewcardPopupOpen(false);
     setAvatarEditPopupOpen(false);
-    setPopupWithImageOpen(false);
+    setImagePopupOpen(false);
   }  
 
   return (
@@ -135,9 +135,9 @@ function App() {
         }      
       />      
 
-      <PopupWithImage
+      <ImagePopup
         card={selectedCard}
-        isOpen={isPopupWithImageOpen}
+        isOpen={isImagePopupOpen}
         onClose={closeAllPopups}        
       />
     </div>
