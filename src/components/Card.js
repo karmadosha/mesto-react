@@ -14,8 +14,8 @@ function Card(props) {
       <button 
         className="element__remove" 
         type="button" 
-        aria-label="удалить карточку">
-      </button>
+        aria-label="удалить карточку" />
+      
       <div className="element__info">
         <h2 className="element__title">{props.card.name}</h2>
         <div className="element__like-group">
@@ -23,7 +23,7 @@ function Card(props) {
            className="element__like" 
            type="button" 
            aria-label="поставить лайк"
-          ></button>
+          />
           <p className="element__like-count">{props.card.likes.length}</p>
         </div>
       </div>

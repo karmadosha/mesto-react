@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -6,11 +6,11 @@ import ImagePopup from './ImagePopup';
 import PopupWithForm from './PopupWithForm';
 
 function App() {
-  const[isProfileEditPopupOpen, setProfileEditPopupOpen] = React.useState(false);
-  const[isAddNewcardPopupOpen, setNewcardPopupOpen] = React.useState(false);
-  const[isAvatarEditPopupOPen, setAvatarEditPopupOpen] = React.useState(false);
-  const[selectedCard, setSelectedCard] = React.useState(null);
-  const[isImagePopupOpen, setImagePopupOpen] = React.useState(false);
+  const[isProfileEditPopupOpen, setProfileEditPopupOpen] = useState(false);
+  const[isAddNewcardPopupOpen, setNewcardPopupOpen] = useState(false);
+  const[isAvatarEditPopupOPen, setAvatarEditPopupOpen] = useState(false);
+  const[selectedCard, setSelectedCard] = useState(null);
+  const[isImagePopupOpen, setImagePopupOpen] = useState(false);
 
   function handleEditAvatarClick() {
     setAvatarEditPopupOpen(true);
@@ -76,7 +76,7 @@ function App() {
                minLength="2" 
                maxLength="200" 
                required={true} />
-              <span className="form__error" id="about-error"></span>
+              <span className="form__error" id="about-error" />
             </label>
           </>
         }
@@ -99,7 +99,7 @@ function App() {
                minLength="2" 
                maxLength="30" 
                required={true} />
-              <span className="form__error form__error_field_place" id="place-error"></span>
+              <span className="form__error form__error_field_place" id="place-error" />
             </label>
             <label className="form__field">
               <input
@@ -110,7 +110,7 @@ function App() {
                placeholder="Ссылка на картинку" 
                minLength="2" 
                required={true} />
-              <span className="form__error form__error_field_link" id="link-error"></span>
+              <span className="form__error form__error_field_link" id="link-error" />
             </label>
           </>            
         }
@@ -130,7 +130,7 @@ function App() {
              name="link" 
              placeholder="Ссылка на фотографию" 
              required />
-            <span className="form__error form__error_field_avatar" id="avatar-error"></span>
+            <span className="form__error form__error_field_avatar" id="avatar-error" />
           </>
         }      
       />      

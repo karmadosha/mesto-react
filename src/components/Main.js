@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import api from "../utils/Api";
 
 function Main(props) {
-  const [userAvatar, setUserAvatar] = React.useState('');
-  const [userName, setUserName] = React.useState('');
-  const [userAbout, setUserAbout] = React.useState('');
-  const [cards, setCards] = React.useState([]);
+  const [userAvatar, setUserAvatar] = useState('');
+  const [userName, setUserName] = useState('');
+  const [userAbout, setUserAbout] = useState('');
+  const [cards, setCards] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     Promise.all([
       api.getUserInfo(),
       api.getInitialCards()
@@ -41,8 +41,7 @@ function Main(props) {
                className="profile__edit-btn" 
                type="button" 
                aria-label="редактировать профиль" 
-               onClick={props.onEditProfile}>
-              </button>
+               onClick={props.onEditProfile} />
             </div>
             <p className="profile__about">{userAbout}</p>
           </div>
@@ -51,7 +50,7 @@ function Main(props) {
          className="profile__add-btn"
          type="button" 
          aria-label="добавить место" 
-         onClick={props.onAddNewCard}></button>
+         onClick={props.onAddNewCard} />
       </section>
       <section className="elements">
         {cards.map((card) => (
