@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div className="footer">
-      <p className="footer__copyright">© 2023 Mesto Russia</p>
+      <p className="footer__copyright">&copy; {new Date().getFullYear()} Mesto Russia</p>
     </div>
   )
 }
